@@ -5,7 +5,7 @@
         </div>
 
         <div class="col-md-6 col-xs-6">
-            <button type="button" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Google+</button>
+            <a href="{{ route('auth.social', 'google') }}" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Google</a>
         </div>
     </div>
 

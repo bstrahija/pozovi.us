@@ -38,7 +38,7 @@ class AuthController extends Controller
      */
     public function redirectToProvider($provider)
     {
-        return Socialize::with('facebook')->redirect();
+        return Socialize::with($provider)->redirect();
     }
 
     /**

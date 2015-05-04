@@ -1,7 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use Auth, Config, Hash, Socialize;
-use App\User;
+use App\Users\UserRepository;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -47,23 +47,13 @@ class AuthController extends Controller
      * @param  string $provider
      * @return \Redirect
      */
-    public function handleProviderCallback($provider)
+    public function handleProviderCallback($provider, UserRepository $user)
     {
-        $user = Socialize::with('facebook')->user();
+        $socialUser = Socialize::with($provider)->user();
 
-        $dbUser = User::where('email', $user->email)->first();
-
-        if ( ! $dbUser)
-        {
-            $dbUser = User::create([
-                'email'      => $user->email,
-                'password'   => Hash::make(uniqid()),
-                'first_name' => $user->user['first_name'],
-                'last_name'  => $user->user['last_name'],
-            ]);
-        }
-
-        Auth::loginUsingId($dbUser->id);
+        // Create/update user and login
+        $user = $user->createOrUpdateFromSocial($socialUser);
+        Auth::loginUsingId($user->id);
 
         return redirect()->route('home');
     }

@@ -35,7 +35,7 @@ class UserRepository extends EloquentRepository
         {
             $user = $this->create([
                 'email'      => $socialUser->email,
-                'password'   => Hash::make(uniqid()),
+                'password'   => bcrypt(uniqid()),
                 'first_name' => array_get($socialUser->user, 'first_name'),
                 'last_name'  => array_get($socialUser->user, 'last_name'),
             ]);

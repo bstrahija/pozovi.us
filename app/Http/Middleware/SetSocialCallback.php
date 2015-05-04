@@ -18,7 +18,7 @@ class SetSocialCallback {
         $provider = Route::current()->parameter('provider');
 
         // Set route for callback
-        if ($route = Config::get("services.$provider.redirect_route"))
+        if ($route = config("services.$provider.redirect_route"))
         {
             Config::set("services.$provider.redirect", route($route, $provider));
         }

@@ -1,9 +1,3 @@
-<div class="col-md-12">
-    <h2>Login</h2>
-    <hr>
-</div>
-
-
 {!! Form::open(['route' => 'login.attempt', 'class' => 'col-md-12']) !!}
     <div class="row text-center">
         <div class="col-md-6 col-xs-6">

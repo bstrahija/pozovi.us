@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Pozovi.us</title>
+@extends('app')
 
-    @include('partials.assets_head')
-</head>
-<body>
-<div class="container">
-    <h1>Dashboard</h1>
-    <p>{!! link_to_route('logout', 'Logout', null, ['class' => 'btn btn-danger']) !!}</p>
-</div>
-</body>
-</html>
-
-
+@section('main')
+    <div class="col-md-12">
+        <h1>Dashboard</h1>
+        <p>{!! link_to_route('logout', 'Logout', null, ['class' => 'btn btn-danger']) !!}</p>
+    </div>
+@stop

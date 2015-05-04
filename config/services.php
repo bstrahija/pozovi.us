@@ -35,4 +35,15 @@ return [
 		'secret' => '',
 	],
 
+    'facebook' => [
+        'client_id'      => '751565034941331',
+        'client_secret'  => '4f29545e3646399854490a7fe1d6d4ba',
+        'redirect'       => '',
+        'redirect_route' => 'auth.social.callback',
+    ],
+
+    'google' => [
+
+    ],
+
 ];

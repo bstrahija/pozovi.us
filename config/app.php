@@ -136,6 +136,14 @@ return [
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 
+        /*
+         * Vendor service providers
+         */
+        'Collective\Html\HtmlServiceProvider',
+        'Laracasts\Flash\FlashServiceProvider',
+        'Clockwork\Support\Laravel\ClockworkServiceProvider',
+        'Laravel\Socialite\SocialiteServiceProvider',
+
 		/*
 		 * Application Service Providers...
 		 */
@@ -192,6 +200,15 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+
+        /*
+         * Vendor aliases
+         */
+        'Flash'     => 'Laracasts\Flash\Flash',
+        'Form'      => 'Collective\Html\FormFacade',
+        'Html'      => 'Collective\Html\HtmlFacade',
+        'Hashids'   => 'Subscribely\Services\Hashids',
+        'Socialize' => 'Laravel\Socialite\Facades\Socialite',
 
 	],
 
